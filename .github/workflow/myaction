@@ -1,0 +1,14 @@
+name: super-linter
+on:push
+jobs:
+super-lint:
+name: lint code base
+runs-on: ubuntu-latest
+steps:
+name: checkout code
+uses: actions/checkout@v2
+name: run super-lint
+uses: github/super-lint@v3
+env:
+DEFAULT_BRANCH: main
+GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
